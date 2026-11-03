@@ -436,6 +436,26 @@ h1,h2,h3,h4 { font-family: var(--font-heading); color: var(--text-white); line-h
 }
 .about-text { font-size: 0.93rem; color: var(--text-dim); line-height: 1.75; margin-bottom: 1rem; }
 .about-text strong { color: var(--text-white); }
+.about-contact-strip {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.15rem;
+  margin-top: auto;
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--border);
+}
+.about-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+.about-contact-link i { color: var(--accent); }
+.about-contact-link:hover { color: var(--accent); }
 .about-info-grid {
   display: grid; grid-template-columns: 1fr; gap: 1rem;
   margin-top: 1.2rem;
@@ -1214,6 +1234,8 @@ h1,h2,h3,h4 { font-family: var(--font-heading); color: var(--text-white); line-h
   .network-caption { right: 1rem; bottom: 0.9rem; }
   .expertise-list { grid-template-columns: 1fr; }
   .about-text-card::after { top: 1rem; bottom: 1rem; }
+  .about-contact-strip { align-items: stretch; flex-direction: column; }
+  .about-contact-strip .btn { width: 100%; }
   .footer-bar { flex-direction: column; text-align: center; }
 }
 
