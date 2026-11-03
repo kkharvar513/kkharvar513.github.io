@@ -915,17 +915,56 @@ h1,h2,h3,h4 { font-family: var(--font-heading); color: var(--text-white); line-h
 }
 
 /* ------------------- 14. BACKGROUND ------------------- */
-.background-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.25rem;
-}
+.background-stack { display: grid; gap: 1.25rem; }
 .background-card {
   padding: 1.75rem;
   background:
     linear-gradient(145deg, rgba(0,212,170,0.045), transparent 44%),
     rgba(15, 22, 41, 0.68);
 }
+.education-card, .experience-card { width: 100%; }
+.education-timeline { display: grid; gap: 0; position: relative; }
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0.6rem;
+  bottom: 0.6rem;
+  left: 7.7rem;
+  width: 1px;
+  background: linear-gradient(var(--accent), rgba(0,212,170,0.12));
+}
+.education-timeline-item {
+  display: grid;
+  grid-template-columns: 7.1rem 1fr;
+  gap: 1.25rem;
+  position: relative;
+  padding: 0.85rem 0;
+}
+.education-timeline-item::after {
+  content: '';
+  position: absolute;
+  left: 7.42rem;
+  top: 1.2rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(0,212,170,0.1), 0 0 14px var(--glow);
+}
+.education-year { color: var(--accent); font-family: var(--font-mono); font-size: 0.7rem; line-height: 1.5; text-align: right; }
+.education-timeline-item div { display: grid; gap: 0.25rem; padding-left: 0.75rem; }
+.education-timeline-item strong { color: var(--text-white); font-size: 0.92rem; line-height: 1.4; }
+.education-timeline-item span:not(.education-year) { color: var(--text-dim); font-size: 0.78rem; line-height: 1.55; }
+.internship-documents { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; margin-top: 1.35rem; padding-top: 1.2rem; border-top: 1px solid rgba(255,255,255,0.07); }
+.document-card { display: flex; align-items: center; gap: 0.7rem; min-width: 0; padding: 0.7rem; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; background: rgba(255,255,255,0.03); transition: transform 0.3s var(--ease-premium), border-color 0.3s ease, background 0.3s ease; }
+.document-card:hover { transform: translateY(-3px); border-color: rgba(0,212,170,0.35); background: rgba(0,212,170,0.06); }
+.document-card img { width: 38px; height: 48px; object-fit: cover; object-position: top; border-radius: 5px; border: 1px solid rgba(255,255,255,0.12); }
+.document-card span { display: grid; gap: 0.15rem; min-width: 0; }
+.document-card strong { color: var(--text-white); font-size: 0.75rem; line-height: 1.3; }
+.document-card small { color: var(--text-muted); font-size: 0.68rem; }
+.document-card > i { color: var(--accent); margin-left: auto; font-size: 0.75rem; }
+.language-tags { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+.language-tags span { padding: 0.5rem 0.85rem; border-radius: 999px; color: var(--text-white); background: rgba(0,212,170,0.07); border: 1px solid rgba(0,212,170,0.2); font-size: 0.8rem; }
 .timeline-list { display: grid; gap: 1rem; }
 .timeline-item {
   display: grid;
@@ -1058,7 +1097,7 @@ h1,h2,h3,h4 { font-family: var(--font-heading); color: var(--text-white); line-h
   .process-grid-modern { grid-template-columns: repeat(2, 1fr); }
   .certs-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: 1fr; }
-  .background-grid { grid-template-columns: 1fr; }
+  .background-stack { grid-template-columns: 1fr; }
   .view-all-link { position: static; justify-content: center; margin-top: 0.5rem; }
 }
 
@@ -1093,6 +1132,10 @@ h1,h2,h3,h4 { font-family: var(--font-heading); color: var(--text-white); line-h
   .certs-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .about-info-grid { grid-template-columns: 1fr; }
+  .education-timeline::before { left: 5.85rem; }
+  .education-timeline-item { grid-template-columns: 5.25rem 1fr; gap: 1rem; }
+  .education-timeline-item::after { left: 5.57rem; }
+  .internship-documents { grid-template-columns: 1fr; }
   .contact-details { grid-template-columns: 1fr; }
   .contact-heading { font-size: clamp(2.4rem, 12vw, 3.4rem); }
   .data-network { min-height: 270px; }
