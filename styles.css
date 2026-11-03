@@ -440,23 +440,22 @@ h1,h2,h3,h4 { font-family: var(--font-heading); color: var(--text-white); line-h
   display: grid; grid-template-columns: 1fr; gap: 1rem;
   margin-top: 1.2rem;
 }
-.about-details-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: clamp(1.35rem, 3vw, 2.1rem);
+.about-photo-card {
+  min-height: 100%;
+  padding: 0.65rem;
   background:
     linear-gradient(145deg, rgba(59,130,246,0.07), transparent 50%),
     rgba(15, 22, 41, 0.72);
 }
-.about-details-kicker {
-  color: var(--accent);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-weight: 700;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--border);
+.about-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: center 54%;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(0, 212, 170, 0.18);
 }
 .info-item { display: grid; grid-template-columns: 20px 1fr; column-gap: 0.55rem; row-gap: 0.1rem; align-items: center; }
 .info-icon { color: var(--accent); font-size: 0.9rem; margin-bottom: 0.15rem; }
