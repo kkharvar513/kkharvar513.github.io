@@ -578,6 +578,21 @@ h1,h2,h3,h4 { font-family: var(--font-heading); color: var(--text-white); line-h
   line-height: 1.3;
   transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
+.tools-grid.reveal-on-scroll .tools-category-tags span {
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+}
+.tools-grid.reveal-on-scroll.is-revealed .tools-category-tags span {
+  animation: skillChipReveal 0.55s var(--ease-premium) forwards;
+}
+.tools-grid.reveal-on-scroll .tools-category-tags span:nth-child(2) { animation-delay: 45ms; }
+.tools-grid.reveal-on-scroll .tools-category-tags span:nth-child(3) { animation-delay: 90ms; }
+.tools-grid.reveal-on-scroll .tools-category-tags span:nth-child(4) { animation-delay: 135ms; }
+.tools-grid.reveal-on-scroll .tools-category-tags span:nth-child(5) { animation-delay: 180ms; }
+.tools-grid.reveal-on-scroll .tools-category-tags span:nth-child(6) { animation-delay: 225ms; }
+@keyframes skillChipReveal {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
 .tools-category-tags span i {
   color: var(--accent);
   font-size: 0.82rem;
